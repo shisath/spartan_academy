@@ -89,15 +89,24 @@ class AdminDashboardScreen extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.person_2_rounded,
-                        size: 35,
+                        size: 45,
                       ),
                       SizedBox(
                         width: 10,
                       ),
-                      Text(
-                        'Hi, Admin !',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Hi, Admin !',
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text('Tuesday, Nov 7, 2023')
+                        ],
                       ),
                     ],
                   )
