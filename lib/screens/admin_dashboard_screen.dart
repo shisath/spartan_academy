@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:spartan_academy/widgets/admin_dashboard_widgets.dart';
+import 'package:get/get.dart';
+import '../controllers/admin_dashboard_controller.dart';
 
 class AdminDashboardScreen extends StatelessWidget {
   const AdminDashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final AdminDashboardController adc = Get.put(AdminDashboardController());
+
     return Scaffold(
       backgroundColor: Color(0xFF1B1B1A),
       body: Row(
@@ -37,13 +41,26 @@ class AdminDashboardScreen extends StatelessWidget {
                     SizedBox(
                       height: 40,
                     ),
-                    Column(
-                      children: [
-                        menuItemWidget('Students', true),
-                        menuItemWidget('Academy', false),
-                        menuItemWidget('Certificates', false),
-                      ],
-                    ),
+                    Obx(
+                      () => Column(
+                          children: List.generate(adc.menuList.length, (index) {
+                        if (index == adc.currentMenuSelectionIndex.value) {
+                          return GestureDetector(
+                              onTap: () {
+                                adc.changeCurrentMenuSelectionIndex(index);
+                                adc.changeCurrentContentSelectionIndex(index);
+                              },
+                              child: menuItemWidget(adc.menuList[index], true));
+                        } else {
+                          return GestureDetector(
+                              onTap: () {
+                                adc.changeCurrentMenuSelectionIndex(index);
+                                adc.changeCurrentContentSelectionIndex(index);
+                              },
+                              child: menuItemWidget(adc.menuList[index]));
+                        }
+                      })),
+                    )
                   ],
                 ),
                 Spacer(),
@@ -109,7 +126,10 @@ class AdminDashboardScreen extends StatelessWidget {
                         ],
                       ),
                     ],
-                  )
+                  ),
+                  Expanded(
+                      child: Obx(() => adc
+                          .contentList[adc.currentContentSelectionIndex.value]))
                 ],
               ),
             ),
