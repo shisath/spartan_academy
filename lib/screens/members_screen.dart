@@ -4,6 +4,8 @@ import 'package:spartan_academy/widgets/home_widgets.dart';
 import 'package:scroll_loop_auto_scroll/scroll_loop_auto_scroll.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 
+import '../widgets/members_widgets.dart';
+
 class MembersScreen extends StatelessWidget {
   const MembersScreen({super.key});
 

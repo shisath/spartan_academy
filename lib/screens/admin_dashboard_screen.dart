@@ -100,6 +100,7 @@ class AdminDashboardScreen extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 color: Colors.white,
               ),
+              // Right container contents
               child: Column(
                 children: [
                   Row(
