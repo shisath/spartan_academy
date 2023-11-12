@@ -9,8 +9,10 @@ class AdminDashboardController extends GetxController {
     academyContentWidget(),
     certificatesContentWidget()
   ];
-  var currentMenuSelectionIndex = 0.obs;
-  var currentContentSelectionIndex = 0.obs;
+  var currentMenuSelectionIndex = 2.obs;
+  var currentContentSelectionIndex = 2.obs;
+
+  var currentCertificateView = createCertificatesWidget().obs;
 
   changeCurrentMenuSelectionIndex(int newIndex) =>
       currentMenuSelectionIndex.value = newIndex;

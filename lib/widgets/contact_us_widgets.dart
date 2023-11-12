@@ -34,7 +34,7 @@ Widget contactItemWidget(IconData icon, String title, String content) {
                     fontSize: 20),
               ),
               SizedBox(
-                height: 10,
+                height: 5,
               ),
               Text(
                 content,
