@@ -17,7 +17,7 @@ class WelcomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "SPARTAN Taekwondo Academy",
+                  "SPARTAN Taekwondo Academy sksksksksksskskssk",
                   style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
