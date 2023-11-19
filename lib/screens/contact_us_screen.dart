@@ -19,7 +19,7 @@ class ContactUsScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Contact Us',
+              'Contact us for more enquery',
               style: TextStyle(
                   fontSize: 50,
                   fontWeight: FontWeight.bold,
